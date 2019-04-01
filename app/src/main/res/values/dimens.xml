@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_image">250dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="font_title_splash">20sp</dimen>
+    <dimen name="margin_between">20dp</dimen>
+</resources>

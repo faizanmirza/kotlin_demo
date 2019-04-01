@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">com.kotlin.sample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_flutter_pakistan">Welcome To Flutter Pakistan</string>
+    <string name="swipe_left_to_proceed">Swipe left to proceed</string>
+    <string name="desc_get_info">Get Information about events, their agendas and register yourself as an attendee</string>
+    <string name="get_started">Get Started</string>
+    <string name="title_register">REGISTER | ATTEND | BUILD</string>
+</resources>

@@ -1,11 +1,15 @@
 <resources>
-    <string name="app_name">com.kotlin.sample</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Flutter Pakistan</string>
     <string name="welcome_to_flutter_pakistan">Welcome To Flutter Pakistan</string>
     <string name="swipe_left_to_proceed">Swipe left to proceed</string>
     <string name="desc_get_info">Get Information about events, their agendas and register yourself as an attendee</string>
     <string name="get_started">Get Started</string>
     <string name="title_register">REGISTER | ATTEND | BUILD</string>
+    <string name="office_address">8th floor, Parsa Tower, Main Shahrah-e-Faisal, Karachi</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="venue">Venue</string>
+    <string name="schedule">Schedule</string>
 </resources>

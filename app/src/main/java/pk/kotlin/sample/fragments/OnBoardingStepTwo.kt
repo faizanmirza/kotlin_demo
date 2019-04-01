@@ -15,7 +15,7 @@ class OnBoardingStepTwo : Fragment() {
     lateinit var btnGetStarted: Button
 
     private fun onClickListener() {
-        btnGetStarted?.setOnClickListener {
+        btnGetStarted.setOnClickListener {
             onGetStartedClicked()
         }
     }

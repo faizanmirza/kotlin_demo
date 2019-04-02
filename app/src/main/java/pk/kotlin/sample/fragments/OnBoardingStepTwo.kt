@@ -9,27 +9,30 @@ import android.view.ViewGroup
 import android.widget.Button
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.DashboardActivity
+import pk.kotlin.sample.presenter.OnBoardingStepTwoPresenter
+import pk.kotlin.sample.views.OnBoardingStepTwoView
 
-class OnBoardingStepTwo : Fragment() {
+class OnBoardingStepTwo : Fragment(), OnBoardingStepTwoView {
 
+    private var onBoardingStepTwoPresenter: OnBoardingStepTwoPresenter? = OnBoardingStepTwoPresenter(this)
     lateinit var btnGetStarted: Button
 
-    private fun onClickListener() {
+    override fun setActionListener() {
         btnGetStarted.setOnClickListener {
-            onGetStartedClicked()
+            onBoardingStepTwoPresenter?.switchToLoginActivity()
         }
-    }
-
-    private fun onGetStartedClicked() {
-        val intentActivity = Intent(activity, DashboardActivity::class.java)
-        startActivity(intentActivity)
-        activity?.finish()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater.inflate(R.layout.fragment_on_boarding_step_two, container, false)
         btnGetStarted = view.findViewById(R.id.btnGetStarted)
-        onClickListener()
+        onBoardingStepTwoPresenter?.setActionListener()
         return view
+    }
+
+    override fun startActivity() {
+        val intentActivity = Intent(activity, DashboardActivity::class.java)
+        startActivity(intentActivity)
+        activity?.finish()
     }
 }

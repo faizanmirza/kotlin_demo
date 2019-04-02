@@ -13,6 +13,7 @@ class OnBoardingStepOne : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_on_boarding_step_one, container, false)
+        val view = inflater.inflate(R.layout.fragment_on_boarding_step_one, container, false)
+        return view
     }
 }

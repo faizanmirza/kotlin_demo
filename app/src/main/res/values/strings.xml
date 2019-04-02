@@ -12,4 +12,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="venue">Venue</string>
     <string name="schedule">Schedule</string>
+    <string name="flutter_live_extended_19">Flutter live extended \'19</string>
+    <string name="event_date">Mar 16, 2019</string>
+    <string name="hrs">HRS</string>
 </resources>

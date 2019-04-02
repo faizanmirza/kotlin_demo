@@ -9,10 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.ScheduleListAdapter
-import pk.kotlin.sample.entities.Session
+import pk.kotlin.sample.managers.FireStoreManager
 
 
 class ScheduleListFragment : Fragment() {
+
     lateinit var recyclerSchedule: RecyclerView
 
     override fun onCreateView(
@@ -28,15 +29,9 @@ class ScheduleListFragment : Fragment() {
 
     private fun initUI() {
 
+        var sessionList = FireStoreManager.getSchedule()
         val linearLayoutManager = LinearLayoutManager(targetFragment?.context)
         recyclerSchedule.layoutManager = linearLayoutManager
-
-        val sessionList = ArrayList<Session>()
-        val session = Session("", "asdas", "", "", "", "", "asdasd", "", listOf(String()))
-        sessionList.add(session)
-        sessionList.add(session)
-        sessionList.add(session)
-        sessionList.add(session)
         val adapter = ScheduleListAdapter(sessionList)
         recyclerSchedule.adapter = adapter
     }

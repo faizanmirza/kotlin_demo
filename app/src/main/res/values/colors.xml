@@ -5,4 +5,9 @@
     <color name="colorAccent">#53C5F9</color>
     <color name="buttonBackground">#53C5F9</color>
     <color name="textColorEvent">#53C5F9</color>
+
+    <color name="listColor1">#f442bf</color>
+    <color name="listColor2">#88c153</color>
+    <color name="white">@android:color/white</color>
+
 </resources>

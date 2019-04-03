@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/relPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgPhone"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_phone_setup" />
+
+        <android.support.v7.widget.AppCompatTextView
+            style="@style/ParagraphText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgPhone"
+            android:layout_marginTop="15dp"
+            android:text="@string/msg_add_phone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputPhoneNumber"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:counterEnabled="true"
+                app:counterMaxLength="13">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/hint_mobile_number"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:text="+92" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewBorder"
+        style="@style/Border"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_below="@+id/relPhone" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnNext"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewBorder"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/activity_margin"
+        android:drawableRight="@drawable/ic_arrow_forward"
+        android:text="@string/btn_next" />
+</RelativeLayout>

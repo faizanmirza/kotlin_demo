@@ -3,6 +3,7 @@
     package="pk.kotlin.sample">
 
     <application
+        android:name=".KotlinApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,13 +15,17 @@
             android:value="AIzaSyACp8_Ptw_232_mc3v2e4pXSHosl-dGdsk" />
 
         <activity android:name=".activities.OnBoardingActivity">
+
+        </activity>
+        <activity android:name=".activities.DashboardActivity" />
+        <activity android:name=".activities.RegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.DashboardActivity" />
     </application>
 
 </manifest>

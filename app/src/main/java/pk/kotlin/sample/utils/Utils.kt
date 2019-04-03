@@ -1,5 +1,6 @@
 package pk.kotlin.sample.utils
 
+import android.graphics.drawable.Drawable
 import pk.kotlin.sample.KotlinApplication
 
 /**
@@ -8,10 +9,14 @@ import pk.kotlin.sample.KotlinApplication
 object Utils {
 
     fun getColor(id: Int): Int {
-        return KotlinApplication.instance.resources.getColor(id)
+        return KotlinApplication.getInstance().resources.getColor(id)
     }
 
     fun getString(id: Int): String {
-        return KotlinApplication.instance.resources.getString(id)
+        return KotlinApplication.getInstance().resources.getString(id)
+    }
+
+    fun getDrawable(id: Int): Drawable {
+        return KotlinApplication.getInstance().resources.getDrawable(id)
     }
 }

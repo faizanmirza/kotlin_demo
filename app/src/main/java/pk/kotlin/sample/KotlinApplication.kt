@@ -1,6 +1,7 @@
 package pk.kotlin.sample
 
 import android.app.Application
+import android.content.Context
 
 /**
  * Created on 02/04/2019.
@@ -9,9 +10,12 @@ import android.app.Application
 class KotlinApplication : Application() {
 
     companion object {
-        lateinit var instance: KotlinApplication
-            private set
+        private lateinit var instance: KotlinApplication
+
+        @JvmStatic
+        fun getInstance() = instance
     }
+
 
     override fun onCreate() {
         super.onCreate()

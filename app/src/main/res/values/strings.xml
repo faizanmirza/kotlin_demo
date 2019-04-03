@@ -15,4 +15,17 @@
     <string name="flutter_live_extended_19">Flutter live extended \'19</string>
     <string name="event_date">Mar 16, 2019</string>
     <string name="hrs">HRS</string>
+    <string name="title_registration">Registration</string>
+    <string name="msg_add_phone">Add your phone number in order to\nreceive events updates.</string>
+    <string name="hint_mobile_number">Mobile number</string>
+    <string name="btn_next">Next</string>
+    <string name="back">back</string>
+    <string name="student">student</string>
+    <string name="msg_occupation">Which one of the following best\ndescribes you?</string>
+    <string name="professional">Professional</string>
+    <string name="done">done</string>
+    <string name="institute">Institute</string>
+    <string name="desc_study">Where did you study?</string>
+    <string name="workplace">Workplace</string>
+    <string name="desc_work">Where do you work?</string>
 </resources>

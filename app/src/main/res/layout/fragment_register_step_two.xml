@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_margin"
-        android:layout_marginTop="100dp"
+        android:layout_centerInParent="true"
         android:layout_marginEnd="@dimen/activity_margin"
         android:gravity="center"
         android:orientation="vertical">
@@ -44,7 +44,7 @@
                 app:srcCompat="@drawable/ic_school" />
         </RelativeLayout>
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/ParagraphText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnStudent"
                 style="@style/ButtonOccputation"
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                 android:layout_marginRight="30dp"
                 android:text="@string/student" />
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnProfessional"
                 style="@style/ButtonOccputation"
                 android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_height=".5dp"
         android:layout_below="@+id/relPhone" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack"
         style="@style/Button"
         android:layout_width="wrap_content"

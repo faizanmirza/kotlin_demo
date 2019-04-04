@@ -1,8 +1,8 @@
 package pk.kotlin.sample.activities
 
 import android.os.Bundle
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.OnBoardingPageAdapter

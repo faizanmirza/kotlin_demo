@@ -11,9 +11,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
+import pk.kotlin.sample.presenter.RegistrationStepThreeFragmentPresenter
 import pk.kotlin.sample.utils.Utils
+import pk.kotlin.sample.views.RegistrationStepThreeFragmentView
 
-class RegistrationStepThreeFragment : Fragment() {
+class RegistrationStepThreeFragment : Fragment(), RegistrationStepThreeFragmentView {
 
     lateinit var btnDone: Button
     lateinit var btnBack: Button
@@ -21,6 +23,7 @@ class RegistrationStepThreeFragment : Fragment() {
     lateinit var txtTitle: TextView
     lateinit var txtInputWorkPlace: TextInputLayout
     var isStudent = false
+    var registrationStepThreeFragmentPresenter = RegistrationStepThreeFragmentPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +42,7 @@ class RegistrationStepThreeFragment : Fragment() {
         txtTitle = view.findViewById(R.id.txtTitle)
         txtInputWorkPlace = view.findViewById(R.id.txtInputWorkPlace)
 
-        if (isStudent) {
-            setUIForStudent()
-        } else {
-            setUIForProfessional()
-        }
+        registrationStepThreeFragmentPresenter.setupUIForRole(isStudent)
 
         btnDone.setOnClickListener {
             (activity as RegistrationActivity).switchToNextStep()
@@ -52,7 +51,7 @@ class RegistrationStepThreeFragment : Fragment() {
         btnBack.setOnClickListener { (activity as RegistrationActivity).switchToPreviousStep() }
     }
 
-    private fun setUIForProfessional() {
+    override fun setUIForProfessional() {
 
         txtTitle.text = Utils.getString(R.string.desc_work)
         imgLogo.setImageDrawable(Utils.getDrawable(R.drawable.ic_work))
@@ -66,7 +65,7 @@ class RegistrationStepThreeFragment : Fragment() {
         )
     }
 
-    private fun setUIForStudent() {
+    override fun setUIForStudent() {
 
         txtTitle.text = Utils.getString(R.string.desc_study)
         imgLogo.setImageDrawable(Utils.getDrawable(R.drawable.ic_school))

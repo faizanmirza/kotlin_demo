@@ -1,15 +1,16 @@
 package pk.kotlin.sample.activities
 
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.widget.ImageButton
-
+import androidx.viewpager.widget.ViewPager
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.RegistrationPageAdapter
+import pk.kotlin.sample.fragments.RegistrationStepFourFragment
 import pk.kotlin.sample.fragments.RegistrationStepOneFragment
 import pk.kotlin.sample.fragments.RegistrationStepThreeFragment
 import pk.kotlin.sample.fragments.RegistrationStepTwoFragment
@@ -23,7 +24,6 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         setContentView(R.layout.activity_registration)
         initUI()
     }
@@ -40,14 +40,13 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
         var toolbar = findViewById<Toolbar>(R.id.layoutToolbar)
         var closeButton = toolbar.findViewById<ImageButton>(R.id.toolbarCloseButton)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         closeButton.setOnClickListener {
             registrationPresenter.onClose()
         }
     }
 
     private fun setupViewPager() {
-
-        viewPager.beginFakeDrag()
 
         registrationPageAdapter = RegistrationPageAdapter(supportFragmentManager)
         registrationPageAdapter.addFragment(RegistrationStepOneFragment())
@@ -63,11 +62,23 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
 
         var position = viewPager.currentItem;
 
-        if (registrationPageAdapter.count == position) {
+        if (registrationPageAdapter.count == position + 1) {
+
+            if (!registrationPresenter.isStudent) {
+                registrationPageAdapter.addFragment(RegistrationStepFourFragment())
+                registrationPageAdapter.notifyDataSetChanged()
+                viewPager.setCurrentItem(position + 1, true)
+            } else {
+                onRegistrationComplete()
+            }
 
         } else {
             viewPager.setCurrentItem(position + 1, true)
         }
+    }
+
+    fun onRegistrationComplete() {
+        Toast.makeText(this, "Registation Complete", Toast.LENGTH_SHORT).show()
     }
 
     fun switchToPreviousStep() {
@@ -79,6 +90,13 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
         } else {
             viewPager.setCurrentItem(position - 1, true)
         }
+    }
+
+    fun switchToSelectProfession() {
+
+        registrationPageAdapter.removeFragment(registrationPageAdapter.count - 1)
+        registrationPageAdapter.notifyDataSetChanged()
+        viewPager.setCurrentItem(1, true)
     }
 
     override fun finishActivity() {

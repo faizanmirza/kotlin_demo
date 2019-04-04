@@ -7,7 +7,12 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="android:windowActionBarOverlay">false</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="@style/TextAppearance.AppCompat.Headline">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">26sp</item>
     </style>
 
     <style name="EditText" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">

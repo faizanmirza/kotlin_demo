@@ -20,7 +20,11 @@ public class RegistrationPageAdapter(manager: FragmentManager?) : FragmentPagerA
         mFragmentList.add(fragment)
     }
 
+    fun removeFragment(position: Int) {
+        mFragmentList.removeAt(position)
+    }
+
     public override fun getCount(): Int {
-        return mFragmentList.size;
+        return mFragmentList.size
     }
 }

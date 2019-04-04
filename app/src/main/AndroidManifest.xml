@@ -10,13 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyACp8_Ptw_232_mc3v2e4pXSHosl-dGdsk" />
 
-        <activity android:name=".activities.OnBoardingActivity">
-
-        </activity>
+        <activity android:name=".activities.OnBoardingActivity" />
         <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.RegistrationActivity">
             <intent-filter>

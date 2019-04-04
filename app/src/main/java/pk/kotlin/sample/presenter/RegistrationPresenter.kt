@@ -1,5 +1,6 @@
 package pk.kotlin.sample.presenter
 
+import pk.kotlin.sample.entities.Registration
 import pk.kotlin.sample.views.RegistrationView
 
 /**
@@ -8,6 +9,9 @@ import pk.kotlin.sample.views.RegistrationView
 
 class RegistrationPresenter(var registrationView: RegistrationView?) : BasePresenter() {
 
+    lateinit var registration: Registration
+    var isStudent: Boolean = true
+
     override fun onDestory() {
         registrationView = null
     }
@@ -15,4 +19,5 @@ class RegistrationPresenter(var registrationView: RegistrationView?) : BasePrese
     fun onClose() {
         registrationView?.finishActivity()
     }
+
 }

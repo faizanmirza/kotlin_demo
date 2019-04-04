@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_dashboard.*
 import pk.kotlin.sample.R
 import pk.kotlin.sample.fragments.MapFragment
 import pk.kotlin.sample.fragments.ScheduleListFragment

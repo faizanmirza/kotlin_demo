@@ -10,7 +10,7 @@
     <color name="listColor2">#88c153</color>
     <color name="white">@android:color/white</color>
     <color name="black">#000000</color>
-    <color name="red">@android:color/holo_red_dark</color>
+    <color name="red">#cc0000</color>
     <color name="border_grey">#EBEBEB</color>
     <color name="buttonColorGrey">#637C87</color>
 

@@ -1,11 +1,11 @@
 package pk.kotlin.sample.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
 
@@ -35,10 +35,12 @@ class RegistrationStepTwoFragment : Fragment() {
         }
 
         btnStudent.setOnClickListener {
+            (activity as RegistrationActivity).registrationPresenter.isStudent = true
             (activity as RegistrationActivity).switchToNextStep()
         }
 
         btnProfessional.setOnClickListener {
+            (activity as RegistrationActivity).registrationPresenter.isStudent = false
             (activity as RegistrationActivity).switchToNextStep()
         }
     }

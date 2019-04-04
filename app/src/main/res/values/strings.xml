@@ -28,4 +28,9 @@
     <string name="desc_study">Where did you study?</string>
     <string name="workplace">Workplace</string>
     <string name="desc_work">Where do you work?</string>
+    <string name="designation">Designation</string>
+    <string name="msg_desgination">What your designation at</string>
+    <string name="error_desgination_required">Designation Required</string>
+    <string name="error_workplace">WorkPlace Required</string>
+    <string name="institue_required">Institute Required</string>
 </resources>

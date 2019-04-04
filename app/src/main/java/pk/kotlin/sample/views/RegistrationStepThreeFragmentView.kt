@@ -7,4 +7,6 @@ interface RegistrationStepThreeFragmentView {
 
     fun setUIForProfessional()
     fun setUIForStudent()
+    fun onWorkPlaceValidFailed()
+    fun onWorkPlaceValidSuccess()
 }

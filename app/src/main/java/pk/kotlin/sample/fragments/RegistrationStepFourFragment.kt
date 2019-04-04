@@ -1,32 +1,34 @@
 package pk.kotlin.sample.fragments
 
 import android.os.Bundle
-import com.google.android.material.textfield.TextInputLayout
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputLayout
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
+import pk.kotlin.sample.presenter.RegistrationStepFourFragmentPresenter
 import pk.kotlin.sample.utils.Utils
+import pk.kotlin.sample.views.RegistrationStepFourFragmentView
 
-class RegistrationStepFourFragment : Fragment() {
+class RegistrationStepFourFragment : Fragment(), RegistrationStepFourFragmentView {
 
+    var registrationStepFourFragmentPresenter = RegistrationStepFourFragmentPresenter(this)
     lateinit var btnDone: Button
     lateinit var btnBack: Button
     lateinit var imgLogo: ImageView
     lateinit var txtTitle: TextView
-    lateinit var txtInputWorkPlace: TextInputLayout
-    var isStudent = false
+    lateinit var txtInputDesignation: TextInputLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_register_step_three, container, false)
+        val view = inflater.inflate(R.layout.fragment_register_step_four, container, false)
         initUI(view)
         return view
     }
@@ -37,46 +39,28 @@ class RegistrationStepFourFragment : Fragment() {
         btnBack = view.findViewById(R.id.btnBack)
         imgLogo = view.findViewById(R.id.imgLogo)
         txtTitle = view.findViewById(R.id.txtTitle)
-        txtInputWorkPlace = view.findViewById(R.id.txtInputWorkPlace)
+        txtInputDesignation = view.findViewById(R.id.txtInputDesignation)
 
-        if (isStudent) {
-            setUIForStudent()
-        } else {
-            setUIForProfessional()
-        }
+        txtInputDesignation.editText?.setText("")
+        txtTitle.text =
+            Utils.getString(R.string.msg_desgination) + " " + (activity as RegistrationActivity).registrationPresenter.registration.workOrInstitute
 
         btnDone.setOnClickListener {
-            (activity as RegistrationActivity).switchToNextStep()
+            registrationStepFourFragmentPresenter.isDesignationValid(txtInputDesignation.editText?.text.toString())
         }
 
-        btnBack.setOnClickListener { (activity as RegistrationActivity).switchToPreviousStep() }
+        btnBack.setOnClickListener { (activity as RegistrationActivity).switchToSelectProfession() }
     }
 
-    private fun setUIForProfessional() {
+    override fun onDesginationValidSuccess() {
+        txtInputDesignation.error = ""
+        (activity as RegistrationActivity).registrationPresenter.registration.designation =
+            txtInputDesignation.editText?.text.toString()
+        (activity as RegistrationActivity).onRegistrationComplete()
 
-        txtTitle.text = Utils.getString(R.string.desc_work)
-        imgLogo.setImageDrawable(Utils.getDrawable(R.drawable.ic_work))
-        txtInputWorkPlace.hint = Utils.getString(R.string.workplace)
-        btnDone.text = Utils.getString(R.string.done)
-        btnDone.setCompoundDrawablesWithIntrinsicBounds(
-            null,
-            null,
-            Utils.getDrawable(R.drawable.ic_check_circle),
-            null
-        )
     }
 
-    private fun setUIForStudent() {
-
-        txtTitle.text = Utils.getString(R.string.desc_study)
-        imgLogo.setImageDrawable(Utils.getDrawable(R.drawable.ic_school))
-        txtInputWorkPlace.hint = Utils.getString(R.string.institute)
-        btnDone.text = Utils.getString(R.string.btn_next)
-        btnDone.setCompoundDrawablesWithIntrinsicBounds(
-            null,
-            null,
-            Utils.getDrawable(R.drawable.ic_arrow_forward),
-            null
-        )
+    override fun onDesginationValidFailed() {
+        txtInputDesignation.error = getString(R.string.error_desgination_required)
     }
 }

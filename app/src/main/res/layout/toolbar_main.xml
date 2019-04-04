@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toolbar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="wrap_content"
     android:background="@null"
-    android:minHeight="?attr/actionBarSize">
+    android:minHeight="?attr/actionBarSize"
+    app:title="">
 
     <ImageButton
         android:id="@+id/toolbarCloseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@null"
-        tools:src="@drawable/ic_close" />
+        app:srcCompat="@drawable/ic_close" />
 
     <TextView
-        android:id="@+id/toolbarTitle"
+        android:id="@+id/toolbar_title"
+        style="@style/ToolbarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="@string/title_registration" />
-
+        android:text="@string/title_registration" />
 </androidx.appcompat.widget.Toolbar>

@@ -8,7 +8,10 @@
 
     <include
         android:id="@+id/layoutToolbar"
-        layout="@layout/toolbar_main" />
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

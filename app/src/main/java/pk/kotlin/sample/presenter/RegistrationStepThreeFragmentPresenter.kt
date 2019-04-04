@@ -1,5 +1,6 @@
 package pk.kotlin.sample.presenter
 
+import android.text.TextUtils
 import pk.kotlin.sample.views.RegistrationStepThreeFragmentView
 
 /**
@@ -19,6 +20,15 @@ class RegistrationStepThreeFragmentPresenter(var registrationStepThreeFragmentVi
             registrationStepThreeFragmentView?.setUIForStudent()
         } else {
             registrationStepThreeFragmentView?.setUIForProfessional()
+        }
+    }
+
+    fun isWorkPlaceValid(designation: String) {
+
+        if (TextUtils.isEmpty(designation)) {
+            registrationStepThreeFragmentView?.onWorkPlaceValidFailed()
+        } else {
+            registrationStepThreeFragmentView?.onWorkPlaceValidSuccess()
         }
     }
 }

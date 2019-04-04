@@ -1,14 +1,15 @@
 package pk.kotlin.sample.fragments
 
 import android.os.Bundle
-import com.google.android.material.textfield.TextInputLayout
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputLayout
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
+import pk.kotlin.sample.entities.Registration
 import pk.kotlin.sample.presenter.RegistrationStepOneFragmentPresenter
 import pk.kotlin.sample.views.RegistrationStepOneFragmentView
 
@@ -42,7 +43,11 @@ class RegistrationStepOneFragment : Fragment(), RegistrationStepOneFragmentView 
     }
 
     override fun switchToStepTwo() {
+
         txtInputPhoneNumber.error = ""
+        (activity as RegistrationActivity).registrationPresenter.registration = Registration()
+        (activity as RegistrationActivity).registrationPresenter.registration.phone =
+            txtInputPhoneNumber.editText?.text.toString()
         (activity as RegistrationActivity).switchToNextStep()
     }
 }

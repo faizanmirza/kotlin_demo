@@ -1,24 +1,32 @@
 package pk.kotlin.sample.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import pk.kotlin.sample.R
 import pk.kotlin.sample.fragments.MapFragment
 import pk.kotlin.sample.fragments.ScheduleListFragment
+import pk.kotlin.sample.utils.Utils
+
 
 class DashboardActivity : AppCompatActivity() {
 
+    private var currentFragment: Fragment? = null
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.navSchedule -> {
+                setUIForFabIcon(true)
                 switchFragment(ScheduleListFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navMap -> {
+                setUIForFabIcon(false)
                 switchFragment(MapFragment())
                 return@OnNavigationItemSelectedListener true
             }
@@ -26,7 +34,26 @@ class DashboardActivity : AppCompatActivity() {
         false
     }
 
+    private fun setUIForFabIcon(isScheduleScreen: Boolean) {
+
+        if (isScheduleScreen) {
+            fabRegister.icon = Utils.getDrawable(R.drawable.ic_group_work)
+            fabRegister.text = Utils.getString(R.string.register)
+        } else {
+            fabRegister.icon = Utils.getDrawable(R.drawable.ic_my_location)
+            fabRegister.text = Utils.getString(R.string.navigate)
+        }
+
+    }
+
     private fun switchFragment(fragment: Fragment) {
+
+
+        if (currentFragment != null && fragment == currentFragment) {
+            return
+        }
+
+        currentFragment = fragment
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment, fragment, fragment.toString())
@@ -37,7 +64,38 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        initUI()
         switchFragment(ScheduleListFragment())
-//        navigation.setNavigationOnClickListener(mOnNavigationItemSelectedListener)
+    }
+
+    private fun initUI() {
+
+        var fabRegister = findViewById<MaterialButton>(R.id.fabRegister)
+        var navigationView = findViewById<BottomNavigationView>(R.id.navigation)
+        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        fabRegister.setOnClickListener {
+
+            if (currentFragment is MapFragment) {
+                openGoogleMap()
+            } else {
+                openRegistrationFragment()
+            }
+        }
+    }
+
+    private fun openRegistrationFragment() {
+        intent = Intent(this, RegistrationActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openGoogleMap() {
+
+        val gmmIntentUri = Uri.parse("geo:37.7749,-122.4194")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        if (mapIntent.resolveActivity(packageManager) != null) {
+            startActivity(mapIntent)
+        }
     }
 }

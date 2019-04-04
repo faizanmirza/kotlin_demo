@@ -33,4 +33,6 @@
     <string name="error_desgination_required">Designation Required</string>
     <string name="error_workplace">WorkPlace Required</string>
     <string name="institue_required">Institute Required</string>
+    <string name="register">Register</string>
+    <string name="navigate">Navigate</string>
 </resources>

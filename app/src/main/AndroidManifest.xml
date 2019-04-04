@@ -16,8 +16,7 @@
             android:value="AIzaSyACp8_Ptw_232_mc3v2e4pXSHosl-dGdsk" />
 
         <activity android:name=".activities.OnBoardingActivity" />
-        <activity android:name=".activities.DashboardActivity" />
-        <activity android:name=".activities.RegistrationActivity">
+        <activity android:name=".activities.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -25,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.RegistrationActivity" />
+
     </application>
 
 </manifest>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#53c5f9</color>
+    <color name="colorPrimary">#1E97F7</color>
     <color name="colorPrimaryDark">#1E97F7</color>
-    <color name="colorAccent">#53C5F9</color>
+    <color name="colorAccent">#1E97F7</color>
+
     <color name="buttonBackground">#53C5F9</color>
     <color name="textColorEvent">#53C5F9</color>
 
@@ -13,6 +14,5 @@
     <color name="red">#cc0000</color>
     <color name="border_grey">#EBEBEB</color>
     <color name="buttonColorGrey">#637C87</color>
-
 
 </resources>

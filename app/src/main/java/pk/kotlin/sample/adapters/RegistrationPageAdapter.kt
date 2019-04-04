@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
  * Created on 01/04/2019.
  */
 
-public class RegistrationPageAdapter(manager: FragmentManager?) : FragmentPagerAdapter(manager) {
+class RegistrationPageAdapter(manager: FragmentManager?) : FragmentPagerAdapter(manager) {
 
     private val mFragmentList: ArrayList<Fragment> = ArrayList()
 
@@ -24,7 +24,7 @@ public class RegistrationPageAdapter(manager: FragmentManager?) : FragmentPagerA
         mFragmentList.removeAt(position)
     }
 
-    public override fun getCount(): Int {
+    override fun getCount(): Int {
         return mFragmentList.size
     }
 }

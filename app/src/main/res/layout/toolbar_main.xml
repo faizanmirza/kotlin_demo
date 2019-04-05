@@ -7,14 +7,14 @@
     android:minHeight="?attr/actionBarSize"
     app:title="">
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/toolbarCloseButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@null"
         app:srcCompat="@drawable/ic_close" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/toolbar_title"
         style="@style/ToolbarTitle"
         android:layout_width="wrap_content"

@@ -13,7 +13,7 @@
         android:layout_above="@+id/dotIndicator"
         android:layout_marginBottom="@dimen/activity_margin" />
 
-    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
         android:id="@+id/dotIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,9 +1,9 @@
 package pk.kotlin.sample.activities
 
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import androidx.viewpager.widget.ViewPager
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.OnBoardingPageAdapter
 import pk.kotlin.sample.fragments.OnBoardingStepOne
@@ -22,7 +22,7 @@ class OnBoardingActivity : AppCompatActivity() {
         val adapter = OnBoardingPageAdapter(supportFragmentManager)
         adapter.addFragment(OnBoardingStepOne())
         adapter.addFragment(OnBoardingStepTwo())
-        val wormDotsIndicator = findViewById<WormDotsIndicator>(R.id.dotIndicator)
+        val wormDotsIndicator = findViewById<SpringDotsIndicator>(R.id.dotIndicator)
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = adapter
         wormDotsIndicator.setViewPager(viewPager)

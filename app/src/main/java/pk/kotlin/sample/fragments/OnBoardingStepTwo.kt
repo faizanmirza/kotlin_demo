@@ -2,13 +2,13 @@ package pk.kotlin.sample.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import pk.kotlin.sample.R
-import pk.kotlin.sample.activities.RegistrationActivity
+import pk.kotlin.sample.activities.DashboardActivity
 import pk.kotlin.sample.presenter.OnBoardingStepTwoPresenter
 import pk.kotlin.sample.views.OnBoardingStepTwoView
 
@@ -31,7 +31,7 @@ class OnBoardingStepTwo : Fragment(), OnBoardingStepTwoView {
     }
 
     override fun startActivity() {
-        val intentActivity = Intent(activity, RegistrationActivity::class.java)
+        val intentActivity = Intent(activity, DashboardActivity::class.java)
         startActivity(intentActivity)
         activity?.finish()
     }

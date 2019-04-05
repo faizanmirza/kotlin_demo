@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OnBoardingStepOne">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/splash_image"
         android:layout_height="@dimen/splash_image"
         android:layout_centerHorizontal="true"
@@ -19,7 +19,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/activity_margin" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
@@ -40,7 +40,7 @@
             android:gravity="center"
             android:text="@string/desc_get_info" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnGetStarted"
             android:layout_width="wrap_content"
             android:layout_height="50dp"

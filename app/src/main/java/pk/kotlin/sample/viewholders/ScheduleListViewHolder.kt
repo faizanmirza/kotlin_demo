@@ -1,9 +1,9 @@
 package pk.kotlin.sample.viewholders
 
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import pk.kotlin.sample.R
 import pk.kotlin.sample.entities.Session
 
@@ -12,10 +12,10 @@ import pk.kotlin.sample.entities.Session
  */
 class ScheduleListViewHolder(itemView: View) : ViewHolder(itemView) {
 
-    val txtHrs = itemView.findViewById<TextView>(R.id.txtHrs)
+    val txtHrs = itemView.findViewById<AppCompatTextView>(R.id.txtHrs)
     val relEvent = itemView.findViewById<LinearLayout>(R.id.relEvent)
-    val textTitle = itemView.findViewById<TextView>(R.id.textTitle)
-    val textTimings = itemView.findViewById<TextView>(R.id.textTimings)
+    val textTitle = itemView.findViewById<AppCompatTextView>(R.id.textTitle)
+    val textTimings = itemView.findViewById<AppCompatTextView>(R.id.textTimings)
 
     fun bind(session: Session) {
 

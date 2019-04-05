@@ -5,30 +5,31 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OnBoardingStepOne">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/splash_image"
         android:layout_height="@dimen/splash_image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginTop="50dp"
         android:src="@drawable/ic_flutter" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_between"
         android:orientation="vertical">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/activity_margin"
             android:gravity="center"
             android:text="@string/welcome_to_flutter_pakistan"
-            android:textColor="@android:color/black"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_title_splash" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
@@ -36,7 +37,8 @@
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginBottom="@dimen/activity_margin"
             android:gravity="center"
-            android:text="@string/swipe_left_to_proceed" />
+            android:text="@string/swipe_left_to_proceed"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </RelativeLayout>

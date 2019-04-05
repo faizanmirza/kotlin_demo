@@ -8,8 +8,8 @@
         android:id="@+id/relPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_margin"
         android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/activity_margin"
         android:layout_marginEnd="@dimen/activity_margin"
         android:gravity="center"
         android:orientation="vertical">
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgOne"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -28,14 +28,14 @@
                 android:layout_toLeftOf="@+id/imgTwo"
                 app:srcCompat="@drawable/ic_work" />
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgTwo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 app:srcCompat="@drawable/ic_mac" />
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgThree"
                 android:layout_width="60dp"
                 android:layout_height="60dp"

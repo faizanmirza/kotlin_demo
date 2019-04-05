@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.RegistrationPageAdapter
@@ -52,7 +52,7 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
         registrationPageAdapter.addFragment(RegistrationStepOneFragment())
         registrationPageAdapter.addFragment(RegistrationStepTwoFragment())
         registrationPageAdapter.addFragment(RegistrationStepThreeFragment())
-        val wormDotsIndicator = findViewById<WormDotsIndicator>(R.id.dotIndicator)
+        val wormDotsIndicator = findViewById<SpringDotsIndicator>(R.id.dotIndicator)
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = registrationPageAdapter
         wormDotsIndicator.setViewPager(viewPager)

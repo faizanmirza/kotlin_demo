@@ -82,6 +82,7 @@ class RegistrationStepThreeFragment : Fragment(), RegistrationStepThreeFragmentV
     override fun setUIForStudent() {
 
         txtInputWorkPlace.editText?.setText("")
+        txtInputWorkPlace.error = ""
         txtTitle.text = Utils.getString(R.string.desc_study)
         imgLogo.setImageDrawable(Utils.getDrawable(R.drawable.ic_school))
         txtInputWorkPlace.hint = Utils.getString(R.string.institute)

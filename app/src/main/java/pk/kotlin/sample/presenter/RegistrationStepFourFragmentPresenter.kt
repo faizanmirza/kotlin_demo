@@ -18,9 +18,9 @@ class RegistrationStepFourFragmentPresenter(var registrationStepFourFragmentView
     fun isDesignationValid(designation: String) {
 
         if (TextUtils.isEmpty(designation)) {
-            registrationStepFourFragmentView?.onDesginationValidFailed()
+            registrationStepFourFragmentView?.onDesignationValidFailed()
         } else {
-            registrationStepFourFragmentView?.onDesginationValidSuccess()
+            registrationStepFourFragmentView?.onDesignationValidSuccess()
 
         }
     }

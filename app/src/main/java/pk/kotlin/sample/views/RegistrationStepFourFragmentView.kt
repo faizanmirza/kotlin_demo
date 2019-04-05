@@ -5,6 +5,6 @@ package pk.kotlin.sample.views
  */
 interface RegistrationStepFourFragmentView {
 
-    fun onDesginationValidSuccess()
-    fun onDesginationValidFailed()
+    fun onDesignationValidSuccess()
+    fun onDesignationValidFailed()
 }

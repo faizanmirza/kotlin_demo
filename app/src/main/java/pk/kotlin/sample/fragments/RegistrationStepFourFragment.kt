@@ -41,9 +41,7 @@ class RegistrationStepFourFragment : Fragment(), RegistrationStepFourFragmentVie
         txtTitle = view.findViewById(R.id.txtTitle)
         txtInputDesignation = view.findViewById(R.id.txtInputDesignation)
 
-        txtInputDesignation.editText?.setText("")
-        txtTitle.text =
-            Utils.getString(R.string.msg_desgination) + " " + (activity as RegistrationActivity).registrationPresenter.registration.workOrInstitute
+        setUI()
 
         btnDone.setOnClickListener {
             registrationStepFourFragmentPresenter.isDesignationValid(txtInputDesignation.editText?.text.toString())
@@ -52,7 +50,14 @@ class RegistrationStepFourFragment : Fragment(), RegistrationStepFourFragmentVie
         btnBack.setOnClickListener { (activity as RegistrationActivity).switchToSelectProfession() }
     }
 
-    override fun onDesginationValidSuccess() {
+    private fun setUI() {
+        txtInputDesignation.error = ""
+        txtInputDesignation.editText?.setText("")
+        txtTitle.text =
+            Utils.getString(R.string.msg_desgination) + " " + (activity as RegistrationActivity).registrationPresenter.registration.workOrInstitute + "?"
+    }
+
+    override fun onDesignationValidSuccess() {
         txtInputDesignation.error = ""
         (activity as RegistrationActivity).registrationPresenter.registration.designation =
             txtInputDesignation.editText?.text.toString()
@@ -60,7 +65,7 @@ class RegistrationStepFourFragment : Fragment(), RegistrationStepFourFragmentVie
 
     }
 
-    override fun onDesginationValidFailed() {
+    override fun onDesignationValidFailed() {
         txtInputDesignation.error = getString(R.string.error_desgination_required)
     }
 }

@@ -1,8 +1,8 @@
 package pk.kotlin.sample.managers
 
 
-import com.google.firebase.firestore.FirebaseFirestore
-import pk.kotlin.sample.R
+import android.util.Log
+import pk.kotlin.sample.KotlinApplication
 import pk.kotlin.sample.entities.Session
 
 
@@ -13,39 +13,52 @@ object FireStoreManager {
 
     private val TAG = FireStoreManager.javaClass.canonicalName!!
 
-    var firebaseFirestore = FirebaseFirestore.getInstance()
 
     fun getSchedule(): ArrayList<Session> {
 
-        var list = listOf("sana", "taha")
+        val docRef = KotlinApplication.getFireStoreInstance().collection("speakers")
 
-        var session = Session(
-            "pairCode",
-            "Flutter development - Live code",
-            "1",
-            "2",
-            R.color.listColor1,
-            R.color.white,
-            "taha",
-            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
-            list
-        )
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d(TAG, "DocumentSnapshot data: " + document.documents)
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
 
-        var session1 = Session(
-            "pairCode",
-            "Flutter development - Live code",
-            "1",
-            "2",
-            R.color.listColor2,
-            R.color.white,
-            "taha",
-            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
-            list
-        );
+
+//        var list = listOf("sana", "taha")
+//
+//        var session = Session(
+//            "pairCode",
+//            "Flutter development - Live code",
+//            "1",
+//            "2",
+//            R.color.listColor1,
+//            R.color.white,
+//            "taha",
+//            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
+//            list
+//        )
+//
+//        var session1 = Session(
+//            "pairCode",
+//            "Flutter development - Live code",
+//            "1",
+//            "2",
+//            R.color.listColor2,
+//            R.color.white,
+//            "taha",
+//            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
+//            list
+//        );
 
         var sessionList = ArrayList<Session>()
-        sessionList.add(session)
-        sessionList.add(session1)
+
         return sessionList
     }
 }

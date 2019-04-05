@@ -2,25 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="85dp"
     tools:context=".fragments.ScheduleListFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtHrs"
+        style="@style/ParagraphText"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="10dp"
         android:gravity="center"
-        android:textColor="@color/textColorEvent"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_15sp"
         android:textStyle="bold"
         tools:text="10:00 HRS" />
 
     <LinearLayout
         android:id="@+id/relEvent"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/txtHrs"
         android:background="@drawable/schedule_box_colored"
@@ -29,21 +31,16 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textTitle"
+            style="@style/ListItemText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:maxLines="1"
-            android:textColor="@android:color/white"
             tools:text="KeyNote - introduction" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textTimings"
+            style="@style/ListItemText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:maxLines="1"
-            android:textColor="@android:color/white"
             tools:text="Mar 16, 2019 10:00 AM - 10:30 AM" />
-
     </LinearLayout>
 </RelativeLayout>

@@ -11,8 +11,10 @@
     <color name="listColor2">#88c153</color>
     <color name="white">@android:color/white</color>
     <color name="black">#000000</color>
-    <color name="red">#cc0000</color>
+    <color name="red">#B22222</color>
     <color name="border_grey">#EBEBEB</color>
     <color name="buttonColorGrey">#637C87</color>
+    <color name="paragraph_text_color">#212121</color>
+    <color name="edit_text_default">#737373</color>
 
 </resources>

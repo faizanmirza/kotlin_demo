@@ -35,4 +35,5 @@
     <string name="institue_required">Institute Required</string>
     <string name="register">Register</string>
     <string name="navigate">Navigate</string>
+    <string name="error_phone_required">You wouldn\'t want to miss any important update! Please enter a valid mobile number</string>
 </resources>

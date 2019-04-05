@@ -11,6 +11,7 @@ import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
 import pk.kotlin.sample.entities.Registration
 import pk.kotlin.sample.presenter.RegistrationStepOneFragmentPresenter
+import pk.kotlin.sample.utils.Utils
 import pk.kotlin.sample.views.RegistrationStepOneFragmentView
 
 class RegistrationStepOneFragment : Fragment(), RegistrationStepOneFragmentView {
@@ -37,9 +38,7 @@ class RegistrationStepOneFragment : Fragment(), RegistrationStepOneFragmentView 
 
     override fun showInvaildPhoneNumberError() {
 
-        txtInputPhoneNumber.setErrorTextColor(activity?.resources?.getColorStateList(R.color.red))
-        txtInputPhoneNumber.error =
-            "You wouldn't want to miss any important update!\nPlease enter a valid mobile number"
+        txtInputPhoneNumber.error = Utils.getString(R.string.error_phone_required)
     }
 
     override fun switchToStepTwo() {

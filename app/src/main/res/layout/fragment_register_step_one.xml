@@ -41,7 +41,6 @@
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 app:counterEnabled="true"
                 app:counterMaxLength="13">
 
@@ -49,9 +48,8 @@
                     android:id="@+id/name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789"
                     android:hint="@string/hint_mobile_number"
-                    android:inputType="number"
+                    android:inputType="phone"
                     android:maxLength="13"
                     android:text="+92" />
             </com.google.android.material.textfield.TextInputLayout>

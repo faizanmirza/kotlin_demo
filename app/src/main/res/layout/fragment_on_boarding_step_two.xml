@@ -9,7 +9,7 @@
         android:layout_width="@dimen/splash_image"
         android:layout_height="@dimen/splash_image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginTop="50dp"
         android:src="@drawable/ic_loader" />
 
     <LinearLayout
@@ -20,17 +20,17 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/activity_margin"
             android:gravity="center"
             android:text="@string/title_register"
-            android:textColor="@android:color/black"
             android:textSize="@dimen/activity_margin" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ParagraphText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
@@ -38,7 +38,8 @@
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginBottom="@dimen/activity_margin"
             android:gravity="center"
-            android:text="@string/desc_get_info" />
+            android:text="@string/desc_get_info"
+            android:textSize="@dimen/subtitle_text_size" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnGetStarted"

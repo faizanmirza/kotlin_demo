@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputLayout
 import pk.kotlin.sample.R
 import pk.kotlin.sample.activities.RegistrationActivity
+import pk.kotlin.sample.entities.Registration
 import pk.kotlin.sample.presenter.RegistrationStepThreeFragmentPresenter
 import pk.kotlin.sample.utils.Utils
 import pk.kotlin.sample.views.RegistrationStepThreeFragmentView
@@ -97,6 +98,10 @@ class RegistrationStepThreeFragment : Fragment(), RegistrationStepThreeFragmentV
     override fun onWorkPlaceValidSuccess() {
 
         txtInputWorkPlace.error = ""
+
+        if ((activity as RegistrationActivity).registrationPresenter.registration == null)
+            (activity as RegistrationActivity).registrationPresenter.registration = Registration()
+
         (activity as RegistrationActivity).registrationPresenter.registration.workOrInstitute =
             txtInputWorkPlace.editText?.text.toString()
         (activity as RegistrationActivity).switchToNextStep()

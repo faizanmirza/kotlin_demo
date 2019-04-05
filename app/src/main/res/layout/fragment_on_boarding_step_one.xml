@@ -20,16 +20,16 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/activity_margin"
             android:gravity="center"
-            android:text="@string/welcome_to_flutter_pakistan"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_title_splash" />
+            android:text="@string/welcome_to_flutter_pakistan" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ParagraphText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_margin"
@@ -38,7 +38,7 @@
             android:layout_marginBottom="@dimen/activity_margin"
             android:gravity="center"
             android:text="@string/swipe_left_to_proceed"
-            android:textSize="14sp" />
+            android:textSize="@dimen/subtitle_text_size" />
     </LinearLayout>
 
 </RelativeLayout>

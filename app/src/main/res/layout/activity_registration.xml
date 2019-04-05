@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/margin_between"
         app:dotsColor="@color/buttonBackground"
         app:dotsCornerRadius="8dp"
         app:dotsSize="16dp"

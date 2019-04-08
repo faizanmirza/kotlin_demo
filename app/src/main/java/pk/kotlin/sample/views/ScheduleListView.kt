@@ -8,4 +8,6 @@ import pk.kotlin.sample.entities.Session
 interface ScheduleListView {
 
     fun populateList(sessionList: ArrayList<Session>)
+
+    fun showNoScheduleMessage()
 }

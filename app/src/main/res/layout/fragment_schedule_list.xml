@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="50dp"
     tools:context=".fragments.ScheduleListFragment">
 
     <RelativeLayout
@@ -10,9 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="@dimen/activity_margin"
         android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgUser"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:gravity="left|top"
+            android:src="@drawable/ic_person" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtTitle"
@@ -39,5 +48,16 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/relHeader"
         android:overScrollMode="never" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtNoSchedule"
+        style="@style/ParagraphText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/error_no_schedule"
+        android:textColor="@color/textColorGrey"
+        android:visibility="gone" />
 
 </RelativeLayout>

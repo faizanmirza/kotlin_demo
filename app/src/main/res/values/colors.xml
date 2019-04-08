@@ -6,9 +6,6 @@
 
     <color name="buttonBackground">#1E97F7</color>
     <color name="textColorEvent">#53C5F9</color>
-
-    <color name="listColor1">#f442bf</color>
-    <color name="listColor2">#88c153</color>
     <color name="white">@android:color/white</color>
     <color name="black">#000000</color>
     <color name="red">#B22222</color>
@@ -17,5 +14,12 @@
     <color name="paragraph_text_color">#212121</color>
     <color name="edit_text_default">#737373</color>
     <color name="textColorGrey">#C8C8C8</color>
+
+    <color name="listColor1">#46B253</color>
+    <color name="listColor2">#5D808B</color>
+    <color name="listColor3">#039687</color>
+    <color name="listColor4">#02ABEE</color>
+    <color name="listColor5">#546EFC</color>
+    <color name="listColor6">#FDC201</color>
 
 </resources>

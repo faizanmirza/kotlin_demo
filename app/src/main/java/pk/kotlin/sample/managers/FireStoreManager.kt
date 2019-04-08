@@ -1,9 +1,10 @@
 package pk.kotlin.sample.managers
 
 
-import android.util.Log
 import pk.kotlin.sample.KotlinApplication
+import pk.kotlin.sample.constants.FireStoreCollection
 import pk.kotlin.sample.entities.Session
+import pk.kotlin.sample.listeners.ScheduleResponseListener
 
 
 /**
@@ -13,52 +14,30 @@ object FireStoreManager {
 
     private val TAG = FireStoreManager.javaClass.canonicalName!!
 
-
-    fun getSchedule(): ArrayList<Session> {
-
-        val docRef = KotlinApplication.getFireStoreInstance().collection("speakers")
-
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: " + document.documents)
-                } else {
-                    Log.d(TAG, "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
-            }
-
-
-//        var list = listOf("sana", "taha")
-//
-//        var session = Session(
-//            "pairCode",
-//            "Flutter development - Live code",
-//            "1",
-//            "2",
-//            R.color.listColor1,
-//            R.color.white,
-//            "taha",
-//            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
-//            list
-//        )
-//
-//        var session1 = Session(
-//            "pairCode",
-//            "Flutter development - Live code",
-//            "1",
-//            "2",
-//            R.color.listColor2,
-//            R.color.white,
-//            "taha",
-//            "A live code action by two Flutter developers, showcasing the delightful development experience while creating a complete application.",
-//            list
-//        );
+    fun getSchedule(scheduleResponseListener: ScheduleResponseListener) {
 
         var sessionList = ArrayList<Session>()
 
-        return sessionList
+        val docRef = KotlinApplication.getFireStoreInstance().collection(FireStoreCollection.DATE)
+            .document("WJqsWCMmpTga6K4sbNz0")
+            .collection(FireStoreCollection.SESSION)
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+
+                if (document != null) {
+
+                    for (doc in document.documents) {
+                        sessionList.add(doc.toObject(Session::class.java)!!)
+                    }
+                    scheduleResponseListener.onScheduleResponseSuccess(sessionList)
+                } else {
+                    scheduleResponseListener.onScheduleResponseSuccess(sessionList)
+                }
+            }
+            .addOnFailureListener { exception ->
+                exception.printStackTrace()
+                scheduleResponseListener.onScheduleResponseFailure()
+            }
     }
 }

@@ -1,62 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ContributionActivity">
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txtTitle"
-        style="@style/ParagraphText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/btnSkip"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="Community contribution" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="@string/skip"
-        android:textColor="@color/edit_text_default"
-        android:textSize="16sp"
-        app:background="@null"
-        app:backgroundTint="@null" />
+    android:overScrollMode="never">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/txtTitle"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/activity_margin"
+        tools:context=".activities.ContributionActivity">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgOne"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/imgTwo"
-            app:srcCompat="@drawable/ic_work" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/ParagraphText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/btnSkip"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:text="Community contribution" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgTwo"
-            android:layout_width="200dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="10dp"
+            android:background="@null"
+            android:gravity="end"
+            android:text="@string/skip"
+            android:textColor="@color/textColorGrey"
+            android:textSize="16sp"
+            app:backgroundTint="@null" />
+
+        <RelativeLayout
+            android:id="@+id/relImageHolder"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_mac" />
+            android:layout_below="@id/txtTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgThree"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/imgTwo"
-            app:srcCompat="@drawable/ic_school" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgOne"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/imgTwo"
+                app:srcCompat="@drawable/ic_web_asset" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgTwo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/ic_desktop_mac" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgThree"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/imgTwo"
+                app:srcCompat="@drawable/ic_phone_iphone" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblContribute"
+            style="@style/ParagraphText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relImageHolder"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:gravity="center"
+            android:text="@string/msg_contribute" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerContribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblContribute"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:minHeight="200dp"
+            android:overScrollMode="never" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContinue"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerContribution"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:drawableRight="@drawable/ic_arrow_forward"
+            android:text="@string/continued" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/errorContributionRequire"
+            style="@style/ParagraphText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnContinue"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:gravity="center"
+            android:text="@string/error_contributionRequired"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_14sp"
+            android:visibility="gone" />
     </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>

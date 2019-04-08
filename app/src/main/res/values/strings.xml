@@ -37,4 +37,14 @@
     <string name="navigate">Navigate</string>
     <string name="error_phone_required">You wouldn\'t want to miss any important update! Please enter a valid mobile number</string>
     <string name="skip">SKIP</string>
+    <string name="msg_contribute">In what capacity do you want to contribute to Flutter community?</string>
+    <string name="continued">Continue</string>
+    <string name="error_contributionRequired">Please select at least one option. You can also SKIP this step from the top right corner of this screen</string>
+
+    <string-array name="contributionTypes">
+        <item>Volunteer</item>
+        <item>Administration &amp; Logistics</item>
+        <item>Speaker</item>
+        <item>Social media marketing</item>
+    </string-array>
 </resources>

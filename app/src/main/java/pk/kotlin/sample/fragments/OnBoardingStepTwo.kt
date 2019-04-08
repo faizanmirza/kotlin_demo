@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import pk.kotlin.sample.R
-import pk.kotlin.sample.activities.DashboardActivity
+import pk.kotlin.sample.activities.ContributionActivity
 import pk.kotlin.sample.presenter.OnBoardingStepTwoPresenter
 import pk.kotlin.sample.views.OnBoardingStepTwoView
 
@@ -31,7 +31,7 @@ class OnBoardingStepTwo : Fragment(), OnBoardingStepTwoView {
     }
 
     override fun startActivity() {
-        val intentActivity = Intent(activity, DashboardActivity::class.java)
+        val intentActivity = Intent(activity, ContributionActivity::class.java)
         startActivity(intentActivity)
         activity?.finish()
     }

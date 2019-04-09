@@ -2,6 +2,7 @@ package pk.kotlin.sample
 
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 
 /**
  * Created on 02/04/2019.
@@ -24,6 +25,11 @@ class KotlinApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setPersistenceEnabled(true)
+            .build()
         fireStoreInstance = FirebaseFirestore.getInstance()
+        fireStoreInstance.firestoreSettings = settings
     }
 }

@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import pk.kotlin.sample.R
 import pk.kotlin.sample.entities.Session
+import pk.kotlin.sample.listeners.ScheduleListItemListener
 import pk.kotlin.sample.utils.DateFormatter
 import pk.kotlin.sample.utils.DateFormatter.formatDate
 import pk.kotlin.sample.utils.Utils
@@ -22,7 +23,7 @@ class ScheduleListViewHolder(itemView: View) : ViewHolder(itemView) {
     private val textTitle = itemView.findViewById<AppCompatTextView>(R.id.textTitle)
     private val textTimings = itemView.findViewById<AppCompatTextView>(R.id.textTimings)
 
-    fun bind(session: Session) {
+    fun bind(session: Session, scheduleListItemListener: ScheduleListItemListener?) {
 
         var hour = session.startDateTime?.hours
         var minute = session.startDateTime?.minutes
@@ -34,6 +35,10 @@ class ScheduleListViewHolder(itemView: View) : ViewHolder(itemView) {
 
         textTimings.text = getTimingString(session)
         setBackgroundColor(session)
+
+        itemView.setOnClickListener {
+            scheduleListItemListener?.onItemClick(session)
+        }
     }
 
     private fun getTimingString(session: Session): String {

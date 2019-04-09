@@ -1,6 +1,8 @@
 package pk.kotlin.sample.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +11,16 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pk.kotlin.sample.R
+import pk.kotlin.sample.activities.ScheduleDetailActivity
 import pk.kotlin.sample.adapters.ScheduleListAdapter
+import pk.kotlin.sample.constants.GlobalConstants
 import pk.kotlin.sample.entities.Session
+import pk.kotlin.sample.listeners.ScheduleListItemListener
 import pk.kotlin.sample.presenter.ScheduleListPresenter
 import pk.kotlin.sample.views.ScheduleListView
 
 
-class ScheduleListFragment : Fragment(), ScheduleListView {
+class ScheduleListFragment : Fragment(), ScheduleListView, ScheduleListItemListener {
 
     private var scheduleListPresenter = ScheduleListPresenter(this)
     private lateinit var recyclerSchedule: RecyclerView
@@ -41,12 +46,23 @@ class ScheduleListFragment : Fragment(), ScheduleListView {
         txtNoSchedule.visibility = View.GONE
         val linearLayoutManager = LinearLayoutManager(targetFragment?.context)
         recyclerSchedule.layoutManager = linearLayoutManager
-        val adapter = ScheduleListAdapter(sessionList)
+        val adapter = ScheduleListAdapter(sessionList, this)
         recyclerSchedule.adapter = adapter
     }
 
     override fun showNoScheduleMessage() {
         txtNoSchedule.visibility = View.VISIBLE
         recyclerSchedule.visibility = View.GONE
+    }
+
+    override fun onItemClick(session: Session) {
+
+        if (TextUtils.isEmpty(session.description))
+            return
+
+        var intent = Intent(activity, ScheduleDetailActivity::class.java)
+        intent.putExtra(GlobalConstants.SESSION, session)
+        startActivity(intent)
+        activity?.overridePendingTransition(R.anim.slide_bottom_up, R.anim.slide_nothing)
     }
 }

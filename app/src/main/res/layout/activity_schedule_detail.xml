@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.ScheduleDetailActivity">
+
+        <include layout="@layout/toolbar_schedule_detail" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/ParagraphText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/about_speaker"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgUser"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:src="@drawable/ic_person" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSpeaker"
+                style="@style/ParagraphText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Speaker Name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAboutSpeaker"
+                style="@style/ParagraphText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textSize="@dimen/text_size_15sp"
+                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewBorder"
+            style="@style/Border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/relPhone" />
+
+        <LinearLayout
+            android:id="@+id/relColoredBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:background="@drawable/rounded_corner_box"
+            android:minHeight="70dp"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="Speaker Name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSubTitle"
+                style="@style/ParagraphText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

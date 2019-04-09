@@ -1,12 +1,15 @@
 package pk.kotlin.sample.entities
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import pk.kotlin.sample.utils.Utils
 import java.util.*
 
 /**
  * Created on 01/04/2019.
  */
-data class Session(
+@Parcelize
+class Session(
     val id: String,
     val title: String,
     val startDateTime: Date?,
@@ -17,7 +20,7 @@ data class Session(
     val speakerId: String,
     val speakers: List<String>?
 
-) {
+) : Parcelable {
     constructor() : this("", "", null, null, "", "", "", "", null)
 
     fun getSessionBackGroundColor(): Int? {

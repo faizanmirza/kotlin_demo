@@ -42,6 +42,8 @@
     <string name="error_contributionRequired">Please select at least one option. You can also SKIP this step from the top right corner of this screen</string>
     <string name="error_no_schedule">Oops! No Schedule</string>
     <string name="dash">-</string>
+    <string name="font_size_10sp">10sp</string>
+    <string name="about_speaker">About Speaker</string>
 
     <string-array name="contributionTypes">
         <item>Volunteer</item>

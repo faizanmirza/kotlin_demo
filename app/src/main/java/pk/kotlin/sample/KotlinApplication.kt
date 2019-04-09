@@ -1,6 +1,6 @@
 package pk.kotlin.sample
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 
@@ -8,7 +8,7 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
  * Created on 02/04/2019.
  */
 
-class KotlinApplication : Application() {
+class KotlinApplication : MultiDexApplication() {
 
     companion object {
         private lateinit var instance: KotlinApplication

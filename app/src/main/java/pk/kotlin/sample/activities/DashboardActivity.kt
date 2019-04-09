@@ -13,7 +13,6 @@ import pk.kotlin.sample.fragments.MapFragment
 import pk.kotlin.sample.fragments.ScheduleListFragment
 import pk.kotlin.sample.utils.Utils
 
-
 class DashboardActivity : AppCompatActivity() {
 
     private var currentFragment: Fragment? = null
@@ -21,14 +20,23 @@ class DashboardActivity : AppCompatActivity() {
 
         when (item.itemId) {
             R.id.navSchedule -> {
-                setUIForFabIcon(true)
-                switchFragment(ScheduleListFragment())
-                return@OnNavigationItemSelectedListener true
+                if (currentFragment is ScheduleListFragment) {
+                    return@OnNavigationItemSelectedListener true
+                } else {
+                    setUIForFabIcon(true)
+                    switchFragment(ScheduleListFragment())
+
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             R.id.navMap -> {
-                setUIForFabIcon(false)
-                switchFragment(MapFragment())
-                return@OnNavigationItemSelectedListener true
+                if (currentFragment is MapFragment) {
+                    return@OnNavigationItemSelectedListener true
+                } else {
+                    setUIForFabIcon(false)
+                    switchFragment(MapFragment())
+                    return@OnNavigationItemSelectedListener true
+                }
             }
         }
         false
@@ -47,11 +55,6 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun switchFragment(fragment: Fragment) {
-
-
-        if (currentFragment != null && fragment == currentFragment) {
-            return
-        }
 
         currentFragment = fragment
         val fragmentManager = supportFragmentManager
@@ -91,7 +94,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun openGoogleMap() {
 
-        val gmmIntentUri = Uri.parse("geo:37.7749,-122.4194")
+        val gmmIntentUri = Uri.parse("geo:24.8633741, 67.0747251")
         val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
         mapIntent.setPackage("com.google.android.apps.maps")
         if (mapIntent.resolveActivity(packageManager) != null) {

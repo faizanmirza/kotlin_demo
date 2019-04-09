@@ -5,4 +5,8 @@ package pk.kotlin.sample.constants
  */
 object GlobalConstants {
     const val SESSION = "session"
+    const val START_DATE_TIME = "startDateTime"
+    const val VENUE = "venue"
+
+
 }

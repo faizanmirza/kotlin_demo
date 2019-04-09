@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
  * Created on 01/04/2019.
  */
 
-public class OnBoardingPageAdapter(manager: FragmentManager?) : FragmentPagerAdapter(manager) {
+class OnBoardingPageAdapter(manager: FragmentManager?) : FragmentPagerAdapter(manager) {
 
     private val mFragmentList: ArrayList<Fragment> = ArrayList()
 
@@ -20,7 +20,7 @@ public class OnBoardingPageAdapter(manager: FragmentManager?) : FragmentPagerAda
         mFragmentList.add(fragment)
     }
 
-    public override fun getCount(): Int {
+    override fun getCount(): Int {
         return mFragmentList.size;
     }
 }

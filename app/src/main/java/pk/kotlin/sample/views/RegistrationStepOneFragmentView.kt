@@ -6,5 +6,5 @@ package pk.kotlin.sample.views
 interface RegistrationStepOneFragmentView {
 
     fun switchToStepTwo()
-    fun showInvaildPhoneNumberError()
+    fun showInvalidPhoneNumberError()
 }

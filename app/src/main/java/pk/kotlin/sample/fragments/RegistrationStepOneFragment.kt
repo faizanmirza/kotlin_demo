@@ -36,7 +36,7 @@ class RegistrationStepOneFragment : Fragment(), RegistrationStepOneFragmentView 
         btnNext.setOnClickListener { registrationStepOneFragmentPresenter.validatePhoneNumber(txtInputPhoneNumber.editText?.text.toString()) }
     }
 
-    override fun showInvaildPhoneNumberError() {
+    override fun showInvalidPhoneNumberError() {
 
         txtInputPhoneNumber.error = Utils.getString(R.string.error_phone_required)
     }

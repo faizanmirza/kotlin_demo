@@ -19,7 +19,7 @@ class RegistrationStepOneFragmentPresenter(var registrationStepOneFragmentView: 
         if (validationHelper.isPhoneNumberValid(phone)) {
             registrationStepOneFragmentView?.switchToStepTwo()
         } else {
-            registrationStepOneFragmentView?.showInvaildPhoneNumberError()
+            registrationStepOneFragmentView?.showInvalidPhoneNumberError()
         }
     }
 }

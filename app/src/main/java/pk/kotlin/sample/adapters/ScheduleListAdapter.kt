@@ -15,10 +15,8 @@ import pk.kotlin.sample.viewholders.ScheduleListViewHolder
 
 class ScheduleListAdapter(
     private val sessionList: ArrayList<Session>,
-    scheduleListItemListener: ScheduleListItemListener
+    private var scheduleListItemListener: ScheduleListItemListener
 ) : RecyclerView.Adapter<ScheduleListViewHolder>() {
-
-    private var scheduleListItemListener = scheduleListItemListener
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ScheduleListViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_schedule_list, viewGroup, false)

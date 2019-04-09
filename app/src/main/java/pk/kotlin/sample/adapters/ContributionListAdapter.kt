@@ -15,11 +15,7 @@ import pk.kotlin.sample.viewholders.ContributionListViewHolder
 class ContributionListAdapter(
     private val contributionList: ArrayList<String>, contributionListItemListener: ContributionListItemListener
 ) : RecyclerView.Adapter<ContributionListViewHolder>() {
-    var contributionListItemListener: ContributionListItemListener
-
-    init {
-        this.contributionListItemListener = contributionListItemListener
-    }
+    var contributionListItemListener: ContributionListItemListener = contributionListItemListener
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ContributionListViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_contribution_list, viewGroup, false)

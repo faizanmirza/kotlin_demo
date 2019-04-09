@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import pk.kotlin.sample.R
 
 
-class OnBoardingStepOne : Fragment() {
+class OnBoardingStepOneFragments : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

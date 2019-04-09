@@ -12,7 +12,7 @@ import pk.kotlin.sample.activities.ContributionActivity
 import pk.kotlin.sample.presenter.OnBoardingStepTwoPresenter
 import pk.kotlin.sample.views.OnBoardingStepTwoView
 
-class OnBoardingStepTwo : Fragment(), OnBoardingStepTwoView {
+class OnBoardingStepTwoFragments : Fragment(), OnBoardingStepTwoView {
 
     private var onBoardingStepTwoPresenter: OnBoardingStepTwoPresenter? = OnBoardingStepTwoPresenter(this)
     lateinit var btnGetStarted: Button

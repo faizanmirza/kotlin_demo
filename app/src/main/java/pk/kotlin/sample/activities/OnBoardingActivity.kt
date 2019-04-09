@@ -6,8 +6,8 @@ import androidx.viewpager.widget.ViewPager
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.OnBoardingPageAdapter
-import pk.kotlin.sample.fragments.OnBoardingStepOne
-import pk.kotlin.sample.fragments.OnBoardingStepTwo
+import pk.kotlin.sample.fragments.OnBoardingStepOneFragments
+import pk.kotlin.sample.fragments.OnBoardingStepTwoFragments
 
 class OnBoardingActivity : AppCompatActivity() {
 
@@ -20,8 +20,8 @@ class OnBoardingActivity : AppCompatActivity() {
     private fun initUI() {
 
         val adapter = OnBoardingPageAdapter(supportFragmentManager)
-        adapter.addFragment(OnBoardingStepOne())
-        adapter.addFragment(OnBoardingStepTwo())
+        adapter.addFragment(OnBoardingStepOneFragments())
+        adapter.addFragment(OnBoardingStepTwoFragments())
         val wormDotsIndicator = findViewById<SpringDotsIndicator>(R.id.dotIndicator)
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = adapter

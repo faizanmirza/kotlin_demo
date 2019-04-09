@@ -44,6 +44,14 @@
     <string name="dash">-</string>
     <string name="font_size_10sp">10sp</string>
     <string name="about_speaker">About Speaker</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="desc_session_feedback">You can provide session feedback after this   event days ends.</string>
+    <string name="want_to_contribute">Want to contribute?</string>
+    <string name="built_with_kotlin_amp_material"><![CDATA[Built with Kotlin & Material]]></string>
+    <string name="loading">loading...</string>
+    <string name="success">Success!</string>
+    <string name="registration_complete">You are registered successfully! \n You will receive a confirmation message soon!</string>
+    <string name="cool">COOL!</string>
 
     <string-array name="contributionTypes">
         <item>Volunteer</item>

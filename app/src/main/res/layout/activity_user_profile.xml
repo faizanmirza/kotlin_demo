@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.UserProfileActivity">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/toolbar_user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutToolbar"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Faizan Mirza"
+            android:textColor="@color/textColorGrey"
+            android:textSize="@dimen/font_size_heading" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtEmail"
+            style="@style/ParagraphText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mfbaig1215@gmail.com"
+            android:textColor="@color/textColorGrey" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ParagraphText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/desc_session_feedback"
+            android:textSize="@dimen/text_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ParagraphText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/want_to_contribute"
+            android:textSize="@dimen/text_size_14sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_feature" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ParagraphText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/built_with_kotlin_amp_material"
+            android:textSize="@dimen/text_size_14sp" />
+    </LinearLayout>
+</RelativeLayout>

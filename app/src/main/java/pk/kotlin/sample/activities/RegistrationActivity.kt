@@ -2,20 +2,21 @@ package pk.kotlin.sample.activities
 
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.viewpager.widget.ViewPager
+import cn.refactor.lib.colordialog.PromptDialog
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import pk.kotlin.sample.R
 import pk.kotlin.sample.adapters.RegistrationPageAdapter
+import pk.kotlin.sample.components.NonSwipeableViewPager
 import pk.kotlin.sample.fragments.RegistrationStepFourFragment
 import pk.kotlin.sample.fragments.RegistrationStepOneFragment
 import pk.kotlin.sample.fragments.RegistrationStepThreeFragment
 import pk.kotlin.sample.fragments.RegistrationStepTwoFragment
 import pk.kotlin.sample.presenter.RegistrationPresenter
 import pk.kotlin.sample.views.RegistrationView
+
 
 class RegistrationActivity : AppCompatActivity(), RegistrationView {
 
@@ -53,7 +54,7 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
         registrationPageAdapter.addFragment(RegistrationStepTwoFragment())
         registrationPageAdapter.addFragment(RegistrationStepThreeFragment())
         val wormDotsIndicator = findViewById<SpringDotsIndicator>(R.id.dotIndicator)
-        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        val viewPager = findViewById<NonSwipeableViewPager>(R.id.viewPager)
         viewPager.adapter = registrationPageAdapter
         wormDotsIndicator.setViewPager(viewPager)
     }
@@ -78,7 +79,20 @@ class RegistrationActivity : AppCompatActivity(), RegistrationView {
     }
 
     fun onRegistrationComplete() {
-        Toast.makeText(this, "Registation Complete", Toast.LENGTH_SHORT).show()
+
+        PromptDialog(this)
+            .setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS)
+            .setAnimationEnable(true)
+            .setTitleText(getString(R.string.success))
+            .setContentText(getString(R.string.registration_complete))
+            .setPositiveListener(
+                getString(pk.kotlin.sample.R.string.cool)
+            ) { dialog ->
+                run {
+                    dialog.dismiss()
+                    finish()
+                }
+            }.show()
     }
 
     fun switchToPreviousStep() {

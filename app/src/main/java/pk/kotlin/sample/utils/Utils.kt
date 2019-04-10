@@ -1,6 +1,7 @@
 package pk.kotlin.sample.utils
 
 import android.graphics.drawable.Drawable
+import androidx.core.content.ContextCompat
 import pk.kotlin.sample.KotlinApplication
 import pk.kotlin.sample.R
 
@@ -17,7 +18,7 @@ object Utils {
 
     private fun initColor() {
 
-        colorHashMap = HashMap  ()
+        colorHashMap = HashMap()
         colorHashMap["teal"] = R.color.listColor1
         colorHashMap["blueGrey"] = R.color.listColor2
         colorHashMap["brown"] = R.color.listColor3
@@ -28,15 +29,15 @@ object Utils {
     }
 
     fun getColor(id: Int): Int {
-        return KotlinApplication.getInstance().resources.getColor(id)
+        return ContextCompat.getColor(KotlinApplication.getInstance(), id)
     }
 
     fun getString(id: Int): String {
         return KotlinApplication.getInstance().resources.getString(id)
     }
 
-    fun getDrawable(id: Int): Drawable {
-        return KotlinApplication.getInstance().resources.getDrawable(id)
+    fun getDrawable(id: Int): Drawable? {
+        return ContextCompat.getDrawable(KotlinApplication.getInstance(), id)
     }
 
     fun getListingColor(color: String): Int? {

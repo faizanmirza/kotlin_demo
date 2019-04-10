@@ -19,7 +19,7 @@ class ContributionListViewHolder(itemView: View) : ViewHolder(itemView) {
     fun bind(contributor: String, contributionListItemListener: ContributionListItemListener) {
 
         txtContributorType.text = contributor
-        txtCheck.setOnCheckedChangeListener { compoundButton: CompoundButton?, isChecked: Boolean ->
+        txtCheck.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             contributionListItemListener.itemSelected(contributor)
         }
     }
